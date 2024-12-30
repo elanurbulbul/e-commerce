@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux';
 import { getProducts } from '../../redux/productSlice';
+import Loading from '../Loading';
+import Product from './Product';
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -13,7 +15,14 @@ const Products = () => {
   }, [dispatch]);
 
   return (
-    <div>Products</div>
+    <div className='flex flex-wrap justify-center '>
+    {productsStatus === 'LOADING' && <Loading />}
+    {
+      products?.map((product,i) => (
+        <Product key={i} product={product} />
+      ))
+    }
+    </div>
   )
 }
 

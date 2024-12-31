@@ -10,10 +10,12 @@ const Home = () => {
   return (
     <div>
         <SliderComp/>
-        <Sorting/>
+        <Sorting setSort={setSort}/>
         <div className='flex'>
-          <Category/>
-          <Products/>
+          <Category setCategory={setCategory}/>
+          {/* //category ve sort props olarak gönderildi, filtreleme yapılanlar */}
+
+          <Products category={category} sort={sort}/> 
         </div>
     </div>
   )

@@ -7,6 +7,8 @@ import PageContainer from "./conteiners/PageContainer";
 import "slick-carousel/slick/slick.css";    
 import "slick-carousel/slick/slick-theme.css";  
 import Detail from "./pages/Detail";
+import Cart from "./pages/Cart";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products/:id" element={<Detail/>} />
-
+            <Route path="/cart" element={<Cart/>} /> 
+            <Route path="/products/:search" element={<Search />} />
           </Routes>
         </Router>
       </PageContainer>

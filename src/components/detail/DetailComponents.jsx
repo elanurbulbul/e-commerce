@@ -12,10 +12,11 @@ const DetailComponents = ({productDetail}) => {
     }
   }
   const increment = () => {
-    if(quantity < productDetail.rating.count){
+    if(productDetail?.rating?.count && quantity < productDetail.rating.count){
         setQuantity(quantity + 1)
     }
   }
+  
   const addBasket = () => {
     dispatch(addToCart({id: productDetail?.id, title: productDetail?.title, image: productDetail?.image, price: productDetail?.price, quantity:quantity}))
   }
